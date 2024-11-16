@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+.nav-bar{
+    list-style-type:none;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    font: bold;
+    background-color: hsl(220, 13%, 91%);
+}
+.nav-bar li{
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 30px;
+  margin-top: 10px;
+  padding-top: 20px;
+  font: bolder;
+  /* margin: 10px; */
+}
+.searchtext{
+  border-radius: 2px;
+  margin-top: 30px;
+  height: 20px;
+  margin-left: 500px;
+}
+#serachbtn{
+  border-radius: 2px;
+  margin-top: 30px;
+  height: 25px;
+  margin-left: 0px;
+}
+#signin{
+  font-weight: bolder;
+  margin-top: 30px;
+  height: 25px;
+  margin-left: 20px;
+  text-decoration: none;
+  font: bolder;
+  color: black;
+}
+#signup{
+  font-weight: bolder;
+  margin-top: 30px;
+  height: 25px;
+  /* margin-left: 10px; */
+  color:white;
+  text-decoration: none;
+  padding: 5px;
+}
+#singupbtn{
+  background-color: rgb(11, 119, 11);
+  margin-top: 25px;
+  border-radius: 10px;
+  height: 35px;
+  text-align: center;
+  margin-left: 10px;
+}
+#logo{
+  font-size:30px;
+  font-weight: bold;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+.homepage{
+  text-align: center;
+  background-color:aqua;
+}
+.maindiv{
+  margin: 10px;
+  background-color: antiquewhite;
+  text-align: center;
+  height: 400px;
+}
+#title{
+  padding: 20px;
+  margin-top: 10px;
+}
+.LoginForm{
+  height: 400px;
+  text-align: center;
+  background-color: antiquewhite;
+  padding-top: 10px;
+}
+.SignupForm{
+  height:500px;
+  text-align: center;
+  background-color: antiquewhite;
+  padding-top: 10px;
+}
+.table{
+  background-color: rgb(240, 192, 134);
+  height: 100px;
+  border: 1px solid blanchedalmond;
+  padding: 50px;  
+  margin-top: 10px;
+  text-align: left;
+  /* margin-left: 400px; */
+}
+.tablediv{
+  /* margin-top: 10px; */
+  padding-top: 20px;
+}
