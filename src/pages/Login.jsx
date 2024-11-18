@@ -13,16 +13,23 @@ function Login() {
 
   const HandlingLogin = (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "admin") {
-      localStorage.setItem("username", username);
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem("personId");
+
+    if (username === storedUsername && password === storedPassword) {
+      localStorage.setItem("sessionUser", username); // Set session key
       setIsloggin(true);
     } else {
-      alert("Invalid Credentials....");
+      alert("Invalid Credentials.");
+      setUsername("");
+      setPassword("");
     }
   };
   const HandlingLogout = () => {
-    localStorage.removeItem("username");
+    localStorage.removeItem("sessionUser");
     setIsloggin(false);
+    setUsername("");
+    setPassword("");
   };
   return (
     <div className="LoginForm">
@@ -34,40 +41,40 @@ function Login() {
       ) : (
         <form onSubmit={HandlingLogin}>
           <div className="tablediv">
-          <h1>Login Here</h1>
-          <table className="table" align="center">
-            <tr>
-              <td>
-                <label>User Name :</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>Password :</label>
-              </td>
-              <td>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-            <tr align="center">
-              <td colspan="2">
-                <button type="submit"> SUBMIT</button>
-              </td>
-            </tr>
-          </table>
+            <h1>Login Here</h1>
+            <table className="table" align="center">
+              <tr>
+                <td>
+                  <label>User Name :</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Password :</label>
+                </td>
+                <td>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </td>
+              </tr>
+              <tr align="center">
+                <td colspan="2">
+                  <button type="submit"> SUBMIT</button>
+                </td>
+              </tr>
+            </table>
           </div>
         </form>
       )}

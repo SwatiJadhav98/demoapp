@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const Navigate = useNavigate();
   const [formData, setFormData] = useState({
-    personId: "",
+    password: "",
     name: "",
     email: "",
     dob: "",
@@ -86,9 +88,14 @@ const SignUp = () => {
       age--;
     }
 
-    setDialog(
-      age > 18 ? "You are eligible to vote!" : "You are not eligible to vote."
-    );
+    if (age > 18) {
+      ("You are eligible to vote!");
+    } else {
+      ("You are not eligible to vote.");
+    }
+    localStorage.setItem("username", formData.name); // Assuming 'name' is used as the username
+    localStorage.setItem("personId", formData.personId);
+    Navigate("/Login");
   };
 
   return (
@@ -321,7 +328,11 @@ const SignUp = () => {
               Gaming
             </td>
           </tr>
-          <tr><td colSpan="3" align="center"><button type="submit">Submit</button></td></tr>
+          <tr>
+            <td colSpan="3" align="center">
+              <button type="submit">Submit</button>
+            </td>
+          </tr>
         </table>
       </form>
       {/* Dialog Box for Voting Eligibility */}
